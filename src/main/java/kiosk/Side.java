@@ -1,36 +1,13 @@
 package kiosk;
 
-public enum Side {
-    NUGGET("너겟킹", 2500),
-    HASHBROWN("해쉬 브라운", 1800),
-    CHEESESTICK("치즈스틱", 1200),
-    ONIONRING("어니언링", 2400),
-    CRISPY("바삭킹", 3000),
-    FRENCHFRIE("감자튀김", 2000);
-
-    private String label;
-    private int price;
-
-    Side(String label, int price) {
-        this.label = label;
-        this.price = price;
-    }
-
-    public String getLabel() {
-        return label;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public String tostring() {
-        return label + " (" + price + "원)";
-    }
-
-    public static void printSide() {
-        for(Side side : Side.values()){
-            System.out.println((side.ordinal()+1) + ". " + side.tostring());
-        }
+public class Side extends Menu {
+    public Side() {
+        super();
+        menu.add(new Item("너겟킹", 2500));
+        menu.add(new Item("해쉬 브라운", 1800));
+        menu.add(new Item("치즈스틱", 1200));
+        menu.add(new Item("어니언링", 2400));
+        menu.add(new Item("바삭킹", 3000));
+        menu.add(new Item("감자튀김", 2000));
     }
 }
